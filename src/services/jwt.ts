@@ -2,7 +2,7 @@ import { User } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 import { IJWTUser } from '../interfaces';
 
-const jwtSecret = '!kdljfglkj23144.';
+const jwtSecret = process.env.JWT_SECRET as string
 
 class JWTService {
   public static generateTokenForUser(user: User) {
