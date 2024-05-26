@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node ./dist/index.js",
     "dev": "nodemon ./src/index.ts",
-    "build": "prisma migrate dev init && tsc"
+    "build": "prisma migrate deploy init && tsc"
   },
   "author": "",
   "license": "ISC",
