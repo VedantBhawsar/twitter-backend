@@ -55,7 +55,10 @@ async function initServer() {
 
   app.use(
     '/graphql',
-    cors<cors.CorsRequest>(),
+    cors({
+      origin: 'https://twitter-clone-three-omega-20.vercel.app', // Replace with your frontend origin
+      credentials: true, // Allow cookies for authentication (if applicable)
+    }),
     express.json(),
     expressMiddleware(graphqlServer, {
       context: async ({ req, res }) => {
